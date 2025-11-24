@@ -1,12 +1,22 @@
 import { GoogleGenAI } from "@google/genai";
 
-// Initialize Gemini client only if API key is present
-const apiKey = process.env.API_KEY || '';
+// Initialize Gemini client safely
+let apiKey = '';
+try {
+  // Check if process is defined (Node.js/Webpack/Parcel environment)
+  if (typeof process !== 'undefined' && process.env && process.env.API_KEY) {
+    apiKey = process.env.API_KEY;
+  }
+} catch (error) {
+  console.warn("Gemini API Key: Unable to access process.env");
+}
+
 const ai = apiKey ? new GoogleGenAI({ apiKey }) : null;
 
 export const refineText = async (text: string, instruction: string): Promise<string> => {
   if (!ai) {
-    throw new Error("Gemini API Key is missing. Please configure process.env.API_KEY.");
+    console.warn("Gemini API Key is missing. Skipping AI refinement.");
+    return text;
   }
 
   try {
