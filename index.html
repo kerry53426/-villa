@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Cloud Sanctuary - Strategy Proposal</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@300;500;700&family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              serif: ['"Noto Serif TC"', 'serif'],
+              sans: ['"Noto Sans TC"', 'sans-serif'],
+            },
+            colors: {
+              luxury: {
+                50: '#F9F8F6',
+                100: '#F2EFE9',
+                200: '#E5DFD4',
+                300: '#D1C4B0',
+                400: '#AD9A7F',
+                500: '#8C785D',
+                600: '#6E5D47',
+                700: '#544636',
+                800: '#3D3328',
+                900: '#2A231C',
+              },
+              accent: {
+                500: '#D4AF37', // Gold
+                600: '#B8860B', // Dark Goldenrod
+              }
+            }
+          },
+        },
+      }
+    </script>
+    <style>
+      @media print {
+        @page {
+          margin: 0;
+          size: auto;
+        }
+        html, body {
+          background-color: white !important;
+          color: black !important;
+          overflow: visible !important;
+          height: auto !important;
+          width: 100% !important;
+          position: static !important;
+        }
+        #root {
+          display: block !important;
+          overflow: visible !important;
+          height: auto !important;
+          width: 100% !important;
+          position: static !important;
+        }
+        .no-print {
+          display: none !important;
+        }
+        .page-break {
+          break-before: page;
+          page-break-before: always;
+        }
+        .avoid-break {
+          break-inside: avoid;
+          page-break-inside: avoid;
+        }
+        * {
+          -webkit-print-color-adjust: exact !important;
+          print-color-adjust: exact !important;
+          box-shadow: none !important;
+        }
+      }
+      /* Custom Scrollbar for screen */
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #2A231C; 
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #544636; 
+        border-radius: 4px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #8C785D; 
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.30.0",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.554.0",
+    "react-markdown": "https://aistudiocdn.com/react-markdown@^10.1.0"
+  }
+}
+</script>
+</head>
+  <body class="bg-luxury-900 text-luxury-50 font-sans antialiased overflow-hidden print:overflow-visible">
+    <div id="root"></div>
+  </body>
+</html>
